@@ -27,7 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
 
       // making a call to DataMuse API to get the synonyms
       const { data } = await axios(
-        `https://api.datamuse.com/words?ml=${selectedText}`
+        `https://api.datamuse.com/words?ml=${replaceSpacesAndInsert(
+          selectedText
+        )}`
       );
 
       // create a QuickPick obj
@@ -43,7 +45,13 @@ export function activate(context: vscode.ExtensionContext) {
       // when any quickPick item is selected, call this function
       quickPick.onDidChangeSelection(([item]) => {
         if (item) {
-          vscode.window.showInformationMessage(`${item.label}`);
+          // replace the selected text with the one user selected
+
+          // inform user that the change has been made
+          vscode.window.showInformationMessage(
+            `${selectedText} has been replaced with its synonym: ${item.label}!`
+          );
+          quickPick.dispose();
         }
       });
       // disposes the quickPick object on clicking hide
@@ -57,5 +65,9 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(disposable);
 }
 
+// the following function replaces any whitespace characters in the text with '+'
+const replaceSpacesAndInsert = (text: string) => {
+  return text.replace(" ", "+");
+};
 // this method is called when your extension is deactivated
 export function deactivate() {}
