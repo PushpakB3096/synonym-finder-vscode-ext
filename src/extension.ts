@@ -46,10 +46,12 @@ export function activate(context: vscode.ExtensionContext) {
       quickPick.onDidChangeSelection(([item]) => {
         if (item) {
           // replace the selected text with the one user selected
-
+          editor.edit((editBuilder) => {
+            editBuilder.replace(editorSelection, item.label);
+          });
           // inform user that the change has been made
           vscode.window.showInformationMessage(
-            `${selectedText} has been replaced with its synonym: ${item.label}!`
+            `'${selectedText}' has been replaced with its synonym: '${item.label}'`
           );
           quickPick.dispose();
         }
