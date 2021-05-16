@@ -9,10 +9,24 @@ export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
     "synonym-finder-vscode-ext.findSynonyms",
     () => {
-      // The code you place here will be executed every time your command is executed
+      // get access to the active editor
+      const editor = vscode.window.activeTextEditor;
 
-      // Display a message box to the user
-      vscode.window.showInformationMessage("Hello World!");
+      // show error if unable to get the editor
+      if (!editor) {
+        vscode.window.showErrorMessage(
+          "Could not get the editor! Please restart VSCode!"
+        );
+        return;
+      }
+
+      // gets the selected text from the editor
+      const editorSelection = editor.selection;
+      const selectedText = editor.document.getText(editorSelection);
+
+      vscode.window.showInformationMessage(
+        `The selectetd text is ${selectedText}`
+      );
     }
   );
 
