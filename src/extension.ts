@@ -53,6 +53,8 @@ export function activate(context: vscode.ExtensionContext) {
           vscode.window.showInformationMessage(
             `'${selectedText}' has been replaced with its synonym: '${item.label}'`
           );
+
+          // delete quickPick obj after we are done with it
           quickPick.dispose();
         }
       });
