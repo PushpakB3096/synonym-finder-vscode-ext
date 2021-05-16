@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import axios from "axios";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -8,7 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
   // The commandId parameter must match the command field in package.json
   let disposable = vscode.commands.registerCommand(
     "synonym-finder-vscode-ext.findSynonyms",
-    () => {
+    async () => {
       // get access to the active editor
       const editor = vscode.window.activeTextEditor;
 
@@ -24,9 +25,12 @@ export function activate(context: vscode.ExtensionContext) {
       const editorSelection = editor.selection;
       const selectedText = editor.document.getText(editorSelection);
 
-      vscode.window.showInformationMessage(
-        `The selectetd text is ${selectedText}`
+      // making a call to DataMuse API to get the synonyms
+      const resp = await axios(
+        `https://api.datamuse.com/words?ml=${selectedText}`
       );
+
+      console.log(resp.data[0].word);
     }
   );
 
