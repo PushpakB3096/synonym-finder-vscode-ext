@@ -26,11 +26,31 @@ export function activate(context: vscode.ExtensionContext) {
       const selectedText = editor.document.getText(editorSelection);
 
       // making a call to DataMuse API to get the synonyms
-      const resp = await axios(
+      const { data } = await axios(
         `https://api.datamuse.com/words?ml=${selectedText}`
       );
 
-      console.log(resp.data[0].word);
+      // create a QuickPick obj
+      const quickPick = vscode.window.createQuickPick();
+
+      // setting the items to display inside the quickPick
+      quickPick.items = data.map((word: any) => {
+        return {
+          label: word.word,
+        };
+      });
+
+      // when any quickPick item is selected, call this function
+      quickPick.onDidChangeSelection(([item]) => {
+        if (item) {
+          vscode.window.showInformationMessage(`${item.label}`);
+        }
+      });
+      // disposes the quickPick object on clicking hide
+      quickPick.onDidHide(() => quickPick.dispose());
+
+      // show the quickPick
+      quickPick.show();
     }
   );
 
