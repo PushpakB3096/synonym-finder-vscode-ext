@@ -3,7 +3,8 @@
   "displayName": "Synonym Finder++",
   "publisher": "PushpakB",
   "description": "Easily finds synonyms of any word!",
-  "version": "0.0.2",
+  "icon": "assets/logo.png",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/PushpakB3096/synonym-finder-vscode-ext.git"
