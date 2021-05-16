@@ -1,6 +1,7 @@
 {
   "name": "synonym-finder-vscode-ext",
   "displayName": "synonym-finder-vscode-ext",
+  "publisher": "PushpakB",
   "description": "Easily finds synonyms of any word!",
   "version": "0.0.1",
   "engines": {
