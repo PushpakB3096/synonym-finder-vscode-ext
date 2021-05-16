@@ -4,7 +4,7 @@
   "publisher": "PushpakB",
   "description": "Easily finds synonyms of any word!",
   "icon": "assets/logo.png",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/PushpakB3096/synonym-finder-vscode-ext.git"
