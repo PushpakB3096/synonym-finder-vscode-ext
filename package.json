@@ -3,7 +3,7 @@
   "displayName": "Synonym Finder++",
   "publisher": "PushpakB",
   "description": "Easily finds synonyms of any word!",
-  "icon": "assets/logo.png",
+  "icon": "/assets/logo.png",
   "version": "0.1.0",
   "repository": {
     "type": "git",
