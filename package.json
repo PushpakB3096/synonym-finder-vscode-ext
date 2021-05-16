@@ -1,9 +1,9 @@
 {
   "name": "synonym-finder-vscode-ext",
-  "displayName": "synonym-finder-vscode-ext",
+  "displayName": "Synonym Finder++",
   "publisher": "PushpakB",
   "description": "Easily finds synonyms of any word!",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/PushpakB3096/synonym-finder-vscode-ext.git"
