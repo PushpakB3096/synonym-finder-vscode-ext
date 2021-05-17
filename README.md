@@ -13,7 +13,7 @@ This extension is published on VSCode Extension Manager. Just search for _Synony
 ## How to use?
 
 - Highlight any word or group of words
-- Bring up command window by pressing _ctrl+shift+P_ (depends on your keymappings).
+- Bring up command window by pressing _Ctrl+Shift+P_ (depends on your keymappings).
 - You will instantly see a list of words that match the highlighted word. Select any that you want to use and press _Enter_.
 - Your highlighted text will be instantly replaced with the one that you selected!
 
