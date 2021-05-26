@@ -7,7 +7,7 @@
 
 ## Introduction
 
-This VSCode extension allows you to highlight any word (s) and instantly get a list of matching synonym, which you can replace using just a click!
+This VSCode extension allows you to highlight any word(s) and instantly get a list of matching synonym, which you can replace using just a click!
 This extension is published on VSCode Extension Manager. Just search for _Synonym Finder++_ in your VSCode!
 
 ## How to use?
